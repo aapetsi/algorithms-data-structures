@@ -61,21 +61,74 @@ class SinglyLinkedList:
             self.head = new_node
         self.length += 1
         return self
-    
-    def get(self, val):
-        pass
+
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        count = 0
+        current = self.head
+        while count != index:
+            current = current.next
+            count += 1
+        return current
+
+    def set_node(self, index, val):
+        found_node = self.get(index)
+        if found_node is None:
+            return False
+        found_node.val = val
+        return True
+
+    def insert(self, index, val):
+        if index < 0 or index > self.length:
+            return False
+        if index == self.length:
+            self.push(val)
+            return True
+        if index == 0:
+            self.unshift(val)
+            return True
+        new_node = Node(val)
+        previous = self.get(index - 1)
+        temp = previous.next
+        previous.next = new_node
+        new_node.next = temp
+        self.length += 1
+        return True
+
+    def remove(self, index):
+        if index < 0 or index > self.length:
+            return None
+        if index == self.length - 1:
+            return self.pop()
+        if index == 0:
+            return self.shift()
+        previous = self.get(index - 1)
+        removed = previous.next
+        previous.next = removed.next
+        self.length -= 1
+        return removed
+
+    def reverse(self):
+        node = self.head
+        self.head = self.tail
+        self.tail = node
+        previous = None
+        next_item = None
+        for i in range(self.length):
+            next_item = node.next
+            node.next = previous
+            previous = node
+            node = next_item
+        return self
+
+    def print_list(self):
+        arr = []
+        current = self.head
+        while current:
+            arr.append(current.val)
+            current = current.next
+        print(arr)
 
     def __str__(self):
         return f"Head: {self.head}, Tail: {self.tail}"
-
-
-linked_list = SinglyLinkedList()
-linked_list.push("hello")
-linked_list.push("world")
-linked_list.push("bye bye")
-linked_list.push("world")
-linked_list.push("bye bye")
-print(linked_list.length)
-print(linked_list.unshift('apetsi'))
-print(linked_list.unshift('ampiah'))
-print(linked_list.length)
