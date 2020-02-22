@@ -58,4 +58,4 @@ def interpolation_search(arr, target, low, high):
             return mid
 
 
-print(interpolation_search([1,2,3,4,5,6,7,8,9,10], 10, 0, 9))
+print(interpolation_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10, 0, 9))
