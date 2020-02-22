@@ -4,7 +4,7 @@
 [![Python 3.8](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
 
 1. SORTING ALGORITHMS
-    * [BINARY SEARCH](search.py) 
-    * [BINARY SEARCH RECURSIVE](search.py)
-    * [INTERPOLATION SEARCH](search.py)
-    * [LINEAR SEARCH](search.py) 
+    * [BINARY SEARCH](./search_algorithms/binary_search.py) 
+    * [BINARY SEARCH RECURSIVE](./search_algorithms/binary_search_recursive.py)
+    * [INTERPOLATION SEARCH](./search_algorithms/interpolation_search.py)
+    * [LINEAR SEARCH](./search_algorithms/linear_search.py) 
