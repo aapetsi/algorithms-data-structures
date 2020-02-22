@@ -10,4 +10,7 @@
     * [Linear Search](./search_algorithms/linear_search.py) 
 
 2. Sorting Algorithms
-    * [Bubble Sort](./sorting_algorithms/bubble_sorty.py)
+    * [Bubble Sort](./sorting_algorithms/bubble_sort.py)
+    * [Quick Sort](./sorting_algorithms/quick_sort.py)
+    * [Merge Sort](./sorting_algorithms/merge_sort.py)
+    * [Insertion Sort](./sorting_algorithms/insertion_sort.py)
