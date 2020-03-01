@@ -13,8 +13,24 @@ def merge(a, b):
     i = 0
     j = 0
 
+    while i < len(a) and j < len(b):
+        if a[i] < b[j]:
+            ret.append(a[i])
+            i += 1
+        elif a[i] > b[j]:
+            ret.append(b[j])
+            j += 1
+
+    while i < len(a):
+        ret.append(a[i])
+        i += 1
+
+    while j < len(b):
+        ret.append(b[j])
+        j += 1
+
     return ret
 
 
 arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]
-merge_sort(arr)
+print(merge_sort(arr))
