@@ -14,3 +14,6 @@
     * [Quick Sort](./sorting_algorithms/quick_sort.py)
     * [Merge Sort](./sorting_algorithms/merge_sort.py)
     * [Insertion Sort](./sorting_algorithms/insertion_sort.py)
+
+3. Data Structures
+    1. [Singly Linked List](./data_structures/linked_list.py)
