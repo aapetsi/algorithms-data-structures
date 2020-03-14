@@ -21,12 +21,21 @@ class Graph:
             if vertex in items:
                 items.remove(vertex)
 
-    def dfs_recursive(self, vertex):
+    def dfs_recursive(self, start):
         result = []
         visited = {}
 
         def dfs(vertex):
-            pass
+            if not vertex:
+                return None
+            visited[vertex] = True
+            result.append(vertex)
+            for neighbor in self.adjacency_list[vertex]:
+                if neighbor not in visited:
+                    return dfs(neighbor)
+
+        dfs(start)
+        return result
 
 
 g = Graph()
@@ -44,6 +53,7 @@ g.add_edge("C", "E")
 g.add_edge("D", "E")
 g.add_edge("D", "F")
 g.add_edge("E", "F")
+print(g.dfs_recursive("B"))
 # g.add_vertex("Tokyo")
 # g.add_vertex("Dallas")
 # g.add_vertex("Aspen")
@@ -57,4 +67,4 @@ g.add_edge("E", "F")
 # g.add_edge("Los Angeles", "Aspen")
 # g.remove_vertex("Hong Kong")
 # g.remove_vertex("Aspen")
-print(g.adjacency_list)
+# print(g.adjacency_list)
