@@ -36,7 +36,22 @@ class Graph:
 
         dfs(start)
         return result
+    
+    def dfs_iterative(self, start):
+        stack = [start]
+        result = []
+        visited = {}
 
+        visited[start] = True
+        while len(stack):
+            current_vertex = stack.pop()
+            result.append(current_vertex)
+
+            for neighbor in self.adjacency_list[current_vertex]:
+                if neighbor not in visited:
+                    visited[neighbor] = True
+                    stack.append(neighbor) 
+        return result
 
 g = Graph()
 g.add_vertex("A")
@@ -53,7 +68,8 @@ g.add_edge("C", "E")
 g.add_edge("D", "E")
 g.add_edge("D", "F")
 g.add_edge("E", "F")
-print(g.dfs_recursive("B"))
+print(g.dfs_iterative("A"))
+# print(g.dfs_recursive("B"))
 # g.add_vertex("Tokyo")
 # g.add_vertex("Dallas")
 # g.add_vertex("Aspen")
