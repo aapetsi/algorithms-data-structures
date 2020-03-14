@@ -21,6 +21,9 @@ class Graph:
             if vertex in items:
                 items.remove(vertex)
 
+    def dfs_recursive(self, vertex):
+        pass
+
 
 g = Graph()
 g.add_vertex("Tokyo")
