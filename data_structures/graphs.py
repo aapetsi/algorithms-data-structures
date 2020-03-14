@@ -22,21 +22,39 @@ class Graph:
                 items.remove(vertex)
 
     def dfs_recursive(self, vertex):
-        pass
+        result = []
+        visited = {}
+
+        def dfs(vertex):
+            pass
 
 
 g = Graph()
-g.add_vertex("Tokyo")
-g.add_vertex("Dallas")
-g.add_vertex("Aspen")
-g.add_vertex("Los Angeles")
-g.add_vertex("Hong Kong")
-g.add_edge("Tokyo", "Dallas")
-g.add_edge("Aspen", "Dallas")
-g.add_edge("Hong Kong", "Tokyo")
-g.add_edge("Hong Kong", "Dallas")
-g.add_edge("Los Angeles", "Hong Kong")
-g.add_edge("Los Angeles", "Aspen")
-g.remove_vertex("Hong Kong")
-g.remove_vertex("Aspen")
+g.add_vertex("A")
+g.add_vertex("B")
+g.add_vertex("C")
+g.add_vertex("D")
+g.add_vertex("E")
+g.add_vertex("F")
+
+g.add_edge("A", "B")
+g.add_edge("A", "C")
+g.add_edge("B", "D")
+g.add_edge("C", "E")
+g.add_edge("D", "E")
+g.add_edge("D", "F")
+g.add_edge("E", "F")
+# g.add_vertex("Tokyo")
+# g.add_vertex("Dallas")
+# g.add_vertex("Aspen")
+# g.add_vertex("Los Angeles")
+# g.add_vertex("Hong Kong")
+# g.add_edge("Tokyo", "Dallas")
+# g.add_edge("Aspen", "Dallas")
+# g.add_edge("Hong Kong", "Tokyo")
+# g.add_edge("Hong Kong", "Dallas")
+# g.add_edge("Los Angeles", "Hong Kong")
+# g.add_edge("Los Angeles", "Aspen")
+# g.remove_vertex("Hong Kong")
+# g.remove_vertex("Aspen")
 print(g.adjacency_list)
