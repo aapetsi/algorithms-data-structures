@@ -28,9 +28,5 @@ def merge(a, b):
     while j < len(b):
         ret.append(b[j])
         j += 1
-
+    print(ret)
     return ret
-
-
-arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]
-print(merge_sort(arr))

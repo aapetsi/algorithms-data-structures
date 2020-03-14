@@ -1,3 +1,4 @@
-# Quick Sort Algorithm
 def quick_sort(arr):
-    pass
+    if len(arr) < 2:
+        return arr
+    
