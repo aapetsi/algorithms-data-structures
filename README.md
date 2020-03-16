@@ -16,7 +16,7 @@
     * [Insertion Sort](./sorting_algorithms/insertion_sort.py)
 
 3. Data Structures
-    1. [Singly Linked List](./data_structures/linked_list.py)
-    2. [Graphs](./data_structures/graphs.py)
-    3. [Trees](./data_structures/trees.py)
-    4. [Doubly Linked List](./data_structures/doubly_linked_list.py)
+    * [Singly Linked List](./data_structures/linked_list.py)
+    * [Graphs](./data_structures/graphs.py)
+    * [Trees](./data_structures/trees.py)
+    * [Doubly Linked List](./data_structures/doubly_linked_list.py)
