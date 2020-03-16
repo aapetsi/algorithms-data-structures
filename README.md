@@ -17,3 +17,6 @@
 
 3. Data Structures
     1. [Singly Linked List](./data_structures/linked_list.py)
+    2. [Graphs](./data_structures/graphs.py)
+    3. [Trees](./data_structures/trees.py)
+    4. [Doubly Linked List](./data_structures/doubly_linked_list.py)
