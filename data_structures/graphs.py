@@ -52,6 +52,22 @@ class Graph:
                     visited[neighbor] = True
                     stack.append(neighbor) 
         return result
+    
+    def bfs(self, start):
+        queue = []
+        result = []
+        visited = {}
+
+        while len(queue):
+            current_vertex = queue.pop(0)
+            result.append(current_vertex)
+
+            for neighbor in self.adjacency_list[current_vertex]:
+                if neighbor not in visited:
+                    visited[neighbor] = True
+                    queue.append(neighbor)
+            
+            return result
 
 g = Graph()
 g.add_vertex("A")
