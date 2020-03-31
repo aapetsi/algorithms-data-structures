@@ -1,5 +1,5 @@
 class HashTable:
-    def __init__(self, size = 53):
+    def __init__(self, size=53):
         self.storage = [None] * size
 
     def _hash(self, key):
@@ -8,9 +8,9 @@ class HashTable:
         for ch in key:
             val = ord(ch) - 96
             total = (total * prime + val) % len(self.storage)
-        
+
         return total
-    
+
     def insert(self, key, value):
         index = self._hash(key)
         if self.storage[index] is None:
@@ -21,14 +21,32 @@ class HashTable:
     def retrieve(self, key):
         index = self._hash(key)
         val = self.storage[index]
+        if val is None:
+            return None
         for item in val:
             if item[0] == key:
-                print(item)
-                return item
-        return None
+                return item[1]
+
+    def keys(self):
+        all_keys = set()
+        for item in self.storage:
+            if item is not None:
+                for val in item:
+                    all_keys.add(val[0])
+        return all_keys
+
+    def values(self):
+        all_values = set()
+        for item in self.storage:
+            if item is not None:
+                for val in item:
+                    all_values.add(val[1])
+        return all_values
 
 
 ht = HashTable()
 ht.insert('ice-cream', 44.5)
-ht.retrieve('ice-cream')
-# print(ht.storage)
+# print(ht.retrieve('ice-cream'))
+ht.insert('apple', 55)
+ht.insert('pepsi', 3.5)
+print(ht.keys(), ht.values())
