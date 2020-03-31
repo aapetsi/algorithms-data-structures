@@ -21,3 +21,4 @@
     * [Graphs](./data_structures/graphs.py)
     * [Trees](./data_structures/trees.py)
     * [Doubly Linked List](./data_structures/doubly_linked_list.py)
+    * [Hash Tables](./data_structures/hash_tables.py)
