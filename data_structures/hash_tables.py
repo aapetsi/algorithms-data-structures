@@ -42,11 +42,3 @@ class HashTable:
                 for val in item:
                     all_values.add(val[1])
         return all_values
-
-
-ht = HashTable()
-ht.insert('ice-cream', 44.5)
-# print(ht.retrieve('ice-cream'))
-ht.insert('apple', 55)
-ht.insert('pepsi', 3.5)
-print(ht.keys(), ht.values())
