@@ -46,7 +46,7 @@ class BinarySearchTree:
         if not found:
             return False
         return current
-    
+
     def contains(self, value):
         if self.root is None:
             return False

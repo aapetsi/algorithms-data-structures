@@ -36,7 +36,7 @@ class Graph:
 
         dfs(start)
         return result
-    
+
     def dfs_iterative(self, start):
         stack = [start]
         result = []
@@ -50,9 +50,9 @@ class Graph:
             for neighbor in self.adjacency_list[current_vertex]:
                 if neighbor not in visited:
                     visited[neighbor] = True
-                    stack.append(neighbor) 
+                    stack.append(neighbor)
         return result
-    
+
     def bfs(self, start):
         queue = []
         result = []
@@ -66,8 +66,9 @@ class Graph:
                 if neighbor not in visited:
                     visited[neighbor] = True
                     queue.append(neighbor)
-            
+
             return result
+
 
 g = Graph()
 g.add_vertex("A")
