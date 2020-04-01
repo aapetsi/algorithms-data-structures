@@ -20,6 +20,7 @@
     * [Singly Linked List](./data_structures/linked_list.py)
     * [Graphs](./data_structures/graphs.py)
     * [Trees](./data_structures/trees.py)
+    * [Binary Search Trees](./data_structures/binary_search_tree.py)
     * [Doubly Linked List](./data_structures/doubly_linked_list.py)
     * [Hash Tables](./data_structures/hash_tables.py)
     * [Queues](./data_structures/queue.py)
