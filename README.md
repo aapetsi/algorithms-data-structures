@@ -23,3 +23,4 @@
     * [Doubly Linked List](./data_structures/doubly_linked_list.py)
     * [Hash Tables](./data_structures/hash_tables.py)
     * [Queues](./data_structures/queue.py)
+    * [Stack](./data_structures/stack.py)
