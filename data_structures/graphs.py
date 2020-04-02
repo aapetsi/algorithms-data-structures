@@ -1,4 +1,8 @@
 class Graph:
+    """
+    Implementation of an unidrected graph
+    """
+
     def __init__(self):
         self.adjacency_list = {}
 
@@ -8,96 +12,58 @@ class Graph:
 
     def add_edge(self, v1, v2):
         self.adjacency_list[v1].append(v2)
-        self.adjacency_list[v2].append(v1)
+        self.adjacency_list[v2]. append(v1)
 
     def remove_edge(self, v1, v2):
         self.adjacency_list[v1].remove(v2)
         self.adjacency_list[v2].remove(v1)
 
-    def remove_vertex(self, vertex):
-        del self.adjacency_list[vertex]
+    def remove_vertex(self, v):
+        del self.adjacency_list[v]
         for key in self.adjacency_list:
-            items = self.adjacency_list[key]
-            if vertex in items:
-                items.remove(vertex)
+            if v in self.adjacency_list[key]:
+                self.adjacency_list[key].remove(v)
+
+    def get_neighbors(self, v):
+        return self.adjacency_list[v]
 
     def dfs_recursive(self, start):
         result = []
         visited = {}
 
-        def dfs(vertex):
-            if not vertex:
-                return None
-            visited[vertex] = True
-            result.append(vertex)
-            for neighbor in self.adjacency_list[vertex]:
+        def dfs(start):
+            if not start:
+                return
+            visited[start] = True
+            result.append(start)
+            neighbors = self.get_neighbors(start)
+            for neighbor in neighbors:
                 if neighbor not in visited:
-                    return dfs(neighbor)
+                    dfs(neighbor)
 
         dfs(start)
+
         return result
 
-    def dfs_iterative(self, start):
-        stack = [start]
-        result = []
-        visited = {}
-
-        visited[start] = True
-        while len(stack):
-            current_vertex = stack.pop()
-            result.append(current_vertex)
-
-            for neighbor in self.adjacency_list[current_vertex]:
-                if neighbor not in visited:
-                    visited[neighbor] = True
-                    stack.append(neighbor)
-        return result
-
-    def bfs(self, start):
-        queue = []
-        result = []
-        visited = {}
-
-        while len(queue):
-            current_vertex = queue.pop(0)
-            result.append(current_vertex)
-
-            for neighbor in self.adjacency_list[current_vertex]:
-                if neighbor not in visited:
-                    visited[neighbor] = True
-                    queue.append(neighbor)
-
-            return result
+    def bfs(self, start, end):
+        pass
 
 
 g = Graph()
-g.add_vertex("A")
-g.add_vertex("B")
-g.add_vertex("C")
-g.add_vertex("D")
-g.add_vertex("E")
-g.add_vertex("F")
+g.add_vertex('A')
+g.add_vertex('B')
+g.add_vertex('C')
+g.add_vertex('D')
+g.add_vertex('E')
+g.add_vertex('F')
 
-g.add_edge("A", "B")
-g.add_edge("A", "C")
-g.add_edge("B", "D")
-g.add_edge("C", "E")
-g.add_edge("D", "E")
-g.add_edge("D", "F")
-g.add_edge("E", "F")
-print(g.dfs_iterative("A"))
-# print(g.dfs_recursive("B"))
-# g.add_vertex("Tokyo")
-# g.add_vertex("Dallas")
-# g.add_vertex("Aspen")
-# g.add_vertex("Los Angeles")
-# g.add_vertex("Hong Kong")
-# g.add_edge("Tokyo", "Dallas")
-# g.add_edge("Aspen", "Dallas")
-# g.add_edge("Hong Kong", "Tokyo")
-# g.add_edge("Hong Kong", "Dallas")
-# g.add_edge("Los Angeles", "Hong Kong")
-# g.add_edge("Los Angeles", "Aspen")
-# g.remove_vertex("Hong Kong")
-# g.remove_vertex("Aspen")
-# print(g.adjacency_list)
+g.add_edge('A', 'B')
+g.add_edge('A', 'C')
+g.add_edge('B', 'D')
+g.add_edge('C', 'E')
+g.add_edge('D', 'E')
+g.add_edge('D', 'F')
+g.add_edge('E', 'F')
+
+print(g.adjacency_list)
+print(g.dfs_recursive('A'))
