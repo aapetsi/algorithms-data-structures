@@ -25,3 +25,4 @@
     * [Hash Tables](./data_structures/hash_tables.py)
     * [Queues](./data_structures/queue.py)
     * [Stack](./data_structures/stack.py)
+    * [Trees](./data_structures/trees.py)
