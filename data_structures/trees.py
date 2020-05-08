@@ -32,7 +32,7 @@ class BinarySearchTree:
                         return self
                     else:
                         current = current.right
-            
+
     def find(self, value):
         if self.root is None:
             return False
@@ -56,10 +56,3 @@ tree.insert(5)
 tree.insert(2)
 tree.insert(13)
 print(tree.find(77))
-
-
-
-
-
-
-
