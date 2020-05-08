@@ -33,14 +33,29 @@ class BinarySearchTree:
                     else:
                         current = current.right
             
+    def find(self, value):
+        if self.root is None:
+            return False
+        current = self.root
+        found = False
+
+        while not found and current:
+            if value < current.value:
+                current = current.left
+            elif value > current.value:
+                current = current.right
+            else:
+                return True
+
+        return False
+
 
 tree = BinarySearchTree()
 tree.insert(10)
 tree.insert(5)
 tree.insert(2)
 tree.insert(13)
-print(tree.root.value)
-print(tree.root.left.value)
+print(tree.find(77))
 
 
 
