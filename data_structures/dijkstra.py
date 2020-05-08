@@ -1,2 +1,2 @@
 def dijkstra:
-  raise NotImplementedError
+    raise NotImplementedError
