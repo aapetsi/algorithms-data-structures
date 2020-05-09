@@ -63,14 +63,3 @@ class BinarySearchTree:
 
 
 tree = BinarySearchTree()
-# print(tree.find(1))
-tree.insert(10)
-tree.insert(5)
-tree.insert(13)
-tree.insert(11)
-tree.insert(2)
-tree.insert(16)
-tree.insert(7)
-print(tree.find(10))
-print(tree.contains(10))
-# print(tree.root.right.value)
