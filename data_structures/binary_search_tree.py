@@ -60,7 +60,7 @@ class BinarySearchTree:
             else:
                 return True
         return False
-    
+
     def bfs(self):
         data = []
         queue = []
@@ -76,6 +76,22 @@ class BinarySearchTree:
                 queue.append(node.right)
         
         return data
+    
+    def dfs_preorder(self):
+        data = []
+        current = self.root
+
+        def traverse(node):
+            data.append(node.value)
+            if node.left:
+                traverse(node.left)
+            if node.right:
+                traverse(node.right)
+        
+        traverse(current)
+
+        return data
+
 
 
 tree = BinarySearchTree()
@@ -86,4 +102,4 @@ tree.insert(3)
 tree.insert(8)
 tree.insert(20)
 
-print(tree.bfs())
+print(tree.dfs_preorder())
