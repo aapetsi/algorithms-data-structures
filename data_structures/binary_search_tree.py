@@ -69,14 +69,14 @@ class BinarySearchTree:
         while len(queue):
             node = queue.pop(0)
             data.append(node.value)
-            
+
             if node.left:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
-        
+
         return data
-    
+
     def dfs_preorder(self):
         data = []
         current = self.root
@@ -87,19 +87,42 @@ class BinarySearchTree:
                 traverse(node.left)
             if node.right:
                 traverse(node.right)
-        
+
+        traverse(current)
+
+        return data
+
+    def dfs_postorder(self):
+        data = []
+        current = self.root
+
+        def traverse(node):
+            if node.left:
+                traverse(node.left)
+            if node.right:
+                traverse(node.right)
+            data.append(node.value)
+
+        traverse(current)
+
+        return data
+
+    def dfs_inorder(self):
+        data = []
+        current = self.root
+
+        def traverse(node):
+            if node.left:
+                traverse(node.left)
+
+            data.append(node.value)
+
+            if node.right:
+                traverse(node.right)
+
         traverse(current)
 
         return data
 
 
 
-tree = BinarySearchTree()
-tree.insert(10)
-tree.insert(6)
-tree.insert(15)
-tree.insert(3)
-tree.insert(8)
-tree.insert(20)
-
-print(tree.dfs_preorder())
