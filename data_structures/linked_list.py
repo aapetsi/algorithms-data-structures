@@ -131,4 +131,24 @@ class SinglyLinkedList:
         print(arr)
 
     def __str__(self):
-        return f"Head: {self.head}, Tail: {self.tail}"
+        current = self.head
+        items = ''
+        while current:
+            if current.next is None:
+                val = str(current.val)
+                items += f'{val}'
+            else: 
+                val = str(current.val)
+                items += f'{val} -> '
+            
+
+            current = current.next
+        
+        return items
+
+ll = SinglyLinkedList()
+ll.push(44)
+ll.push(42)
+ll.push(421)
+ll.push(122)
+print(ll)
