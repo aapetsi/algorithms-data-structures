@@ -23,6 +23,12 @@ class Graph:
         for key in self.adjacency_list:
             if v in self.adjacency_list[key]:
                 self.adjacency_list[key].remove(v)
+    
+    def __repr__(self):
+        s = ''
+        for key in self.adjacency_list:
+            s += f'{key}: {self.adjacency_list[key]}\n'
+        return s
 
     def get_neighbors(self, v):
         return self.adjacency_list[v]
