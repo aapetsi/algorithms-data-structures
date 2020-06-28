@@ -11,8 +11,11 @@ class Graph:
             self.adjacency_list[vertex] = []
 
     def add_edge(self, v1, v2):
-        self.adjacency_list[v1].append(v2)
-        self.adjacency_list[v2]. append(v1)
+        if v1 in self.adjacency_list and v2 in self.adjacency_list:
+            self.adjacency_list[v1].append(v2)
+            self.adjacency_list[v2]. append(v1
+        else:
+            raise KeyError('Key not found in adjacency list')
 
     def remove_edge(self, v1, v2):
         self.adjacency_list[v1].remove(v2)
