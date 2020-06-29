@@ -18,8 +18,9 @@ class Graph:
             raise KeyError('Key not found in adjacency list')
 
     def remove_edge(self, v1, v2):
-        self.adjacency_list[v1].remove(v2)
-        self.adjacency_list[v2].remove(v1)
+        if v1 in self.adjacency_list and v2 in self.adjacency_list:
+            self.adjacency_list[v1].remove(v2)
+            self.adjacency_list[v2].remove(v1)
 
     def remove_vertex(self, v):
         del self.adjacency_list[v]
